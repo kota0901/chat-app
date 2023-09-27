@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
+    end
   end
   def destroy
     room = Room.find(params[:id])
@@ -21,5 +22,4 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:name, user_ids: [])
   end
-end
 end
